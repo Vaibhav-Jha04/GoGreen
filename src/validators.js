@@ -47,3 +47,5 @@ export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
+
+export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
