@@ -190,3 +190,10 @@ export const memoize = (fn) => {
 export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
 
 export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
