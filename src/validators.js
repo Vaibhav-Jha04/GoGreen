@@ -59,3 +59,5 @@ export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
