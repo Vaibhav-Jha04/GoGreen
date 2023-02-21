@@ -157,3 +157,5 @@ export const identity = (x) => x;
 export const noop = () => {};
 
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
+
+export const toArray = (val) => (Array.isArray(val) ? val : [val]);
