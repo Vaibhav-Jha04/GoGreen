@@ -164,3 +164,9 @@ export const zip = (...arrays) =>
   Array.from({ length: Math.min(...arrays.map(a => a.length)) }, (_, i) => arrays.map(a => a[i]));
 
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
+
+export const isEmpty = (val) =>
+  val === null || val === undefined ||
+  (typeof val === 'string' && val.trim() === '') ||
+  (Array.isArray(val) && val.length === 0) ||
+  (typeof val === 'object' && Object.keys(val).length === 0);
