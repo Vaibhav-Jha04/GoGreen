@@ -170,3 +170,9 @@ export const isEmpty = (val) =>
   (typeof val === 'string' && val.trim() === '') ||
   (Array.isArray(val) && val.length === 0) ||
   (typeof val === 'object' && Object.keys(val).length === 0);
+
+export const deepClone = (val) => {
+  if (val === null || typeof val !== 'object') return val;
+  if (Array.isArray(val)) return val.map(deepClone);
+  return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
+};
