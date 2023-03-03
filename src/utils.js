@@ -178,3 +178,5 @@ export const deepClone = (val) => {
 };
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export const toArray = (val) => (Array.isArray(val) ? val : [val]);
