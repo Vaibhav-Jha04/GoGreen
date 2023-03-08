@@ -70,3 +70,5 @@ export const isUUID = (v) =>
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
