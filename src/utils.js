@@ -190,3 +190,8 @@ export const chunk = (arr, size) => {
 export const noop = () => {};
 
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
+
+export const debounce = (fn, wait) => {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+};
