@@ -109,3 +109,8 @@ const createStore = (reducer, initialState) => {
   };
 };
 export default createStore;
+
+export const combineReducers = (reducers) => (state = {}, action) =>
+  Object.fromEntries(
+    Object.entries(reducers).map(([key, reducer]) => [key, reducer(state[key], action)])
+  );
