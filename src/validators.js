@@ -72,3 +72,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
