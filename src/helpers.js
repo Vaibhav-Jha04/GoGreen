@@ -287,3 +287,10 @@ export const once = (fn) => {
   let called = false, result;
   return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
 };
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
