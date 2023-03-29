@@ -206,3 +206,5 @@ export const debounce = (fn, wait) => {
 };
 
 export const identity = (x) => x;
+
+export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
