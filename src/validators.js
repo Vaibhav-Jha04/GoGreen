@@ -78,3 +78,5 @@ export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
+
+export const isInteger = (v) => Number.isInteger(v);
