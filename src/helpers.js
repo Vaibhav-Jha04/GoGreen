@@ -321,3 +321,5 @@ export const memoize = (fn) => {
     return result;
   };
 };
+
+export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
