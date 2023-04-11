@@ -139,3 +139,9 @@ export const withAuth = (options = {}) => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },
 });
+
+export const buildQueryString = (params) =>
+  '?' + Object.entries(params)
+    .filter(([, v]) => v !== undefined && v !== null)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
