@@ -80,3 +80,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isInteger = (v) => Number.isInteger(v);
+
+export const isPositive = (v) => typeof v === 'number' && v > 0;
