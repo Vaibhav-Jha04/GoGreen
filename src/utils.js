@@ -226,3 +226,9 @@ export const zip = (...arrays) =>
   Array.from({ length: Math.min(...arrays.map(a => a.length)) }, (_, i) => arrays.map(a => a[i]));
 
 export const uniq = (arr) => [...new Set(arr)];
+
+export const deepClone = (val) => {
+  if (val === null || typeof val !== 'object') return val;
+  if (Array.isArray(val)) return val.map(deepClone);
+  return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
+};
