@@ -97,3 +97,5 @@ export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
+
+export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
