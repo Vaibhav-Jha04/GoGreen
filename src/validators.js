@@ -95,3 +95,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
+
+export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
