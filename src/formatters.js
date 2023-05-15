@@ -115,3 +115,6 @@ export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
 
 export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+
+export const toTitleCase = (str) =>
+  str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
