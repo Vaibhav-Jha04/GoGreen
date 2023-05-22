@@ -387,3 +387,5 @@ export const paginate = (items, page, limit) => ({
   page,
   pages: Math.ceil(items.length / limit),
 });
+
+export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
