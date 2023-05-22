@@ -103,3 +103,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
+
+export const isPositive = (v) => typeof v === 'number' && v > 0;
