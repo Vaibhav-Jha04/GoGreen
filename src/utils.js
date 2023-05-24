@@ -254,3 +254,5 @@ export const uniq = (arr) => [...new Set(arr)];
 
 export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+
+export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
