@@ -130,3 +130,6 @@ export const formatNumber = (n, decimals = 2) =>
 
 export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
