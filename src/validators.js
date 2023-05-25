@@ -105,3 +105,5 @@ export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
