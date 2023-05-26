@@ -258,3 +258,5 @@ export const omit = (obj, keys) =>
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
+
+export const identity = (x) => x;
