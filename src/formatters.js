@@ -136,3 +136,10 @@ export const pluralize = (word, count, plural) =>
 
 export const toTitleCase = (str) =>
   str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+
+export const bytesToHuman = (bytes) => {
+  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  let i = 0;
+  while (bytes >= 1024 && i < units.length - 1) { bytes /= 1024; i++; }
+  return `${bytes.toFixed(1)} ${units[i]}`;
+};
