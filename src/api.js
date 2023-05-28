@@ -235,3 +235,9 @@ export const buildQueryString = (params) =>
     .filter(([, v]) => v !== undefined && v !== null)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&');
+
+export const buildQueryString = (params) =>
+  '?' + Object.entries(params)
+    .filter(([, v]) => v !== undefined && v !== null)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
