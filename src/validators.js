@@ -111,3 +111,5 @@ export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
