@@ -277,3 +277,8 @@ export const zip = (...arrays) =>
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
 
 export const noop = () => {};
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
