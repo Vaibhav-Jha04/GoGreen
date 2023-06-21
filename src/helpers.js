@@ -30,3 +30,10 @@ export const retry = async (fn, retries = 3, delay = 500) => {
     return retry(fn, retries - 1, delay * 2);
   }
 };
+
+export const groupBy = (arr, key) =>
+  arr.reduce((acc, item) => {
+    const g = typeof key === 'function' ? key(item) : item[key];
+    (acc[g] = acc[g] || []).push(item);
+    return acc;
+  }, {});
