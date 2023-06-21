@@ -119,3 +119,5 @@ export const isOneOf = (v, options) => options.includes(v);
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
