@@ -284,3 +284,5 @@ export const flatten = (arr, depth = 1) =>
     : arr.slice();
 
 export const identity = (x) => x;
+
+export const noop = () => {};
