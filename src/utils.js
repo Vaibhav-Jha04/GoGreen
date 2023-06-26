@@ -296,3 +296,8 @@ export const flatten = (arr, depth = 1) =>
     : arr.slice();
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export const debounce = (fn, wait) => {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+};
