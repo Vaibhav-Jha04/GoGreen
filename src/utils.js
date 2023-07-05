@@ -306,3 +306,8 @@ export const uniq = (arr) => [...new Set(arr)];
 
 export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+
+export const debounce = (fn, wait) => {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+};
