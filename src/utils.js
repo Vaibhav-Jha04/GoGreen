@@ -319,3 +319,8 @@ export const chunk = (arr, size) => {
 };
 
 export const uniq = (arr) => [...new Set(arr)];
+
+export const debounce = (fn, wait) => {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+};
