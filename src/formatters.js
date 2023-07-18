@@ -171,3 +171,6 @@ export const formatDuration = (ms) => {
   const s = Math.floor(ms / 1000), m = Math.floor(s / 60), h = Math.floor(m / 60);
   return [h, m % 60, s % 60].map(v => String(v).padStart(2, '0')).join(':');
 };
+
+export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
+  new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
