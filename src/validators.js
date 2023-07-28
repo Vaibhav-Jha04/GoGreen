@@ -133,3 +133,6 @@ export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
+
+export const isUUID = (v) =>
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(v);
