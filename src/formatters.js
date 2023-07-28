@@ -174,3 +174,6 @@ export const formatDuration = (ms) => {
 
 export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
   new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
+
+export const formatNumber = (n, decimals = 2) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
