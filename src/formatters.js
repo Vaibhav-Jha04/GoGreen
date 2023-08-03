@@ -177,3 +177,6 @@ export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
 
 export const formatNumber = (n, decimals = 2) =>
   new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
+
+export const toTitleCase = (str) =>
+  str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
