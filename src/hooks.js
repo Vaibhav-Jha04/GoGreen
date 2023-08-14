@@ -537,3 +537,14 @@ export const useClickOutside = (ref, handler) => {
     return () => document.removeEventListener('mousedown', listener);
   }, [ref, handler]);
 };
+
+import { useEffect, useRef } from 'react';
+
+export const useDebounce = (value, delay) => {
+  const [debounced, setDebounced] = useState(value);
+  useEffect(() => {
+    const t = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(t);
+  }, [value, delay]);
+  return debounced;
+};
