@@ -191,3 +191,6 @@ export const pluralize = (word, count, plural) =>
 
 export const formatNumber = (n, decimals = 2) =>
   new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
+
+export const truncate = (str, max, ellipsis = '…') =>
+  str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
