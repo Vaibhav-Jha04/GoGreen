@@ -145,3 +145,5 @@ export const isInteger = (v) => Number.isInteger(v);
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isOneOf = (v, options) => options.includes(v);
