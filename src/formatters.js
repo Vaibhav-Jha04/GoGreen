@@ -206,3 +206,5 @@ export const bytesToHuman = (bytes) => {
   while (bytes >= 1024 && i < units.length - 1) { bytes /= 1024; i++; }
   return `${bytes.toFixed(1)} ${units[i]}`;
 };
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
