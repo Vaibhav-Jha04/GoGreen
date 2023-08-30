@@ -153,3 +153,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
+
+export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
