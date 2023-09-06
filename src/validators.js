@@ -161,3 +161,5 @@ export const isPositive = (v) => typeof v === 'number' && v > 0;
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
+
+export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
