@@ -165,3 +165,5 @@ export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
+
+export const isPositive = (v) => typeof v === 'number' && v > 0;
