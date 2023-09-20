@@ -11,3 +11,8 @@ export const deepClone = (val) => {
   if (Array.isArray(val)) return val.map(deepClone);
   return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
 };
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
