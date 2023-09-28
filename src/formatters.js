@@ -234,3 +234,6 @@ export const toTitleCase = (str) =>
 
 export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
+
+export const formatNumber = (n, decimals = 2) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
