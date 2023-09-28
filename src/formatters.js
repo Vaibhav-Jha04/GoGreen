@@ -237,3 +237,5 @@ export const pluralize = (word, count, plural) =>
 
 export const formatNumber = (n, decimals = 2) =>
   new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
