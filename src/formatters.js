@@ -246,3 +246,6 @@ export const formatDuration = (ms) => {
 };
 
 export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
+  new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
