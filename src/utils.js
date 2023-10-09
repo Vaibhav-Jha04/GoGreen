@@ -19,3 +19,6 @@ export const flatten = (arr, depth = 1) =>
 
 export const pick = (obj, keys) =>
   Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
