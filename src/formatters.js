@@ -295,3 +295,8 @@ export const formatDuration = (ms) => {
 export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
 export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+
+export const formatDuration = (ms) => {
+  const s = Math.floor(ms / 1000), m = Math.floor(s / 60), h = Math.floor(m / 60);
+  return [h, m % 60, s % 60].map(v => String(v).padStart(2, '0')).join(':');
+};
