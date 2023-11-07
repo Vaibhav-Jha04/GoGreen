@@ -191,3 +191,5 @@ export const isPositive = (v) => typeof v === 'number' && v > 0;
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
