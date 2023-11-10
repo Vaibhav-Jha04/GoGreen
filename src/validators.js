@@ -193,3 +193,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
+
+export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
