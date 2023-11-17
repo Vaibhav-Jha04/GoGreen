@@ -306,3 +306,5 @@ export const truncate = (str, max, ellipsis = '…') =>
 
 export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
+
+export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
