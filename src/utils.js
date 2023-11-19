@@ -448,3 +448,9 @@ export const chunk = (arr, size) => {
   for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
   return out;
 };
+
+export const isEmpty = (val) =>
+  val === null || val === undefined ||
+  (typeof val === 'string' && val.trim() === '') ||
+  (Array.isArray(val) && val.length === 0) ||
+  (typeof val === 'object' && Object.keys(val).length === 0);
