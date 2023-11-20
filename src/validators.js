@@ -203,3 +203,5 @@ export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
