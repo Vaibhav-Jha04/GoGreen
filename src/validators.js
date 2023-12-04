@@ -211,3 +211,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const isInteger = (v) => Number.isInteger(v);
 
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
+
+export const isInteger = (v) => Number.isInteger(v);
