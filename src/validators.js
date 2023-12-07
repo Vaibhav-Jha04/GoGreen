@@ -213,3 +213,5 @@ export const isInteger = (v) => Number.isInteger(v);
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 
 export const isInteger = (v) => Number.isInteger(v);
+
+export const isOneOf = (v, options) => options.includes(v);
