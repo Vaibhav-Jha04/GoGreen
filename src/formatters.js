@@ -331,3 +331,6 @@ export const formatNumber = (n, decimals = 2) =>
 
 export const formatDate = (date, locale = 'en-US') =>
   new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
+
+export const formatDate = (date, locale = 'en-US') =>
+  new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
