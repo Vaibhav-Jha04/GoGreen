@@ -727,3 +727,8 @@ export const groupBy = (arr, key) =>
     (acc[g] = acc[g] || []).push(item);
     return acc;
   }, {});
+
+export const once = (fn) => {
+  let called = false, result;
+  return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
+};
