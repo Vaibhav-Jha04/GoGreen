@@ -740,3 +740,5 @@ export const retry = async (fn, retries = 3, delay = 500) => {
     return retry(fn, retries - 1, delay * 2);
   }
 };
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
