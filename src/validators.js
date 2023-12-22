@@ -215,3 +215,5 @@ export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 export const isInteger = (v) => Number.isInteger(v);
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
