@@ -352,3 +352,6 @@ export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
 
 export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
   new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
