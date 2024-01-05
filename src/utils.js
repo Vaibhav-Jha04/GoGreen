@@ -485,3 +485,5 @@ export const debounce = (fn, wait) => {
 };
 
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
+
+export const identity = (x) => x;
