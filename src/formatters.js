@@ -357,3 +357,5 @@ export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
 
 export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
