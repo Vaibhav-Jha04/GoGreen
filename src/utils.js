@@ -487,3 +487,6 @@ export const debounce = (fn, wait) => {
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
 
 export const identity = (x) => x;
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
