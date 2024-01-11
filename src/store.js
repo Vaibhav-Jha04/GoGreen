@@ -639,3 +639,9 @@ export const combineReducers = (reducers) => (state = {}, action) =>
   Object.fromEntries(
     Object.entries(reducers).map(([key, reducer]) => [key, reducer(state[key], action)])
   );
+
+export const applyMiddleware = (...middlewares) => (store) => {
+  let dispatch = store.dispatch;
+  middlewares.reverse().forEach(mw => { dispatch = mw(store)(dispatch); });
+  return { ...store, dispatch };
+};
