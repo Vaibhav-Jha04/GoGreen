@@ -757,3 +757,10 @@ export const retry = async (fn, retries = 3, delay = 500) => {
     return retry(fn, retries - 1, delay * 2);
   }
 };
+
+export const paginate = (items, page, limit) => ({
+  data: items.slice((page - 1) * limit, page * limit),
+  total: items.length,
+  page,
+  pages: Math.ceil(items.length / limit),
+});
