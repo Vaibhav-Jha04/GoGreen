@@ -490,3 +490,5 @@ export const identity = (x) => x;
 
 export const pick = (obj, keys) =>
   Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
+
+export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
