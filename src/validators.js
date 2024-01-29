@@ -236,3 +236,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
