@@ -234,3 +234,5 @@ export const isUUID = (v) =>
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
+
+export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
