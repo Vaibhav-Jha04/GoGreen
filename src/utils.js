@@ -494,3 +494,5 @@ export const pick = (obj, keys) =>
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 export const toArray = (val) => (Array.isArray(val) ? val : [val]);
+
+export const noop = () => {};
