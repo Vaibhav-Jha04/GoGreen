@@ -238,3 +238,5 @@ export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
 
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
+
+export const isOneOf = (v, options) => options.includes(v);
