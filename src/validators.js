@@ -240,3 +240,5 @@ export const isUrl = (v) => { try { new URL(v); return true; } catch { return fa
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
