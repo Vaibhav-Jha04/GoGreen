@@ -1012,3 +1012,14 @@ export const useClickOutside = (ref, handler) => {
     return () => document.removeEventListener('mousedown', listener);
   }, [ref, handler]);
 };
+
+import { useState, useEffect } from 'react';
+
+export const useLocalStorage = (key, initial) => {
+  const [value, setValue] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(key)) ?? initial; }
+    catch { return initial; }
+  });
+  useEffect(() => { localStorage.setItem(key, JSON.stringify(value)); }, [key, value]);
+  return [value, setValue];
+};
