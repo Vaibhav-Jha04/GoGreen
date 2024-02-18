@@ -515,3 +515,5 @@ export const debounce = (fn, wait) => {
 };
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const uniq = (arr) => [...new Set(arr)];
