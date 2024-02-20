@@ -384,3 +384,5 @@ export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
 
 export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
