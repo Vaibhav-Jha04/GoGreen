@@ -767,3 +767,9 @@ export const get = async (path, options = {}) => {
   if (!res.ok) throw new Error(`GET ${path} failed: ${res.status}`);
   return res.json();
 };
+
+export const buildQueryString = (params) =>
+  '?' + Object.entries(params)
+    .filter(([, v]) => v !== undefined && v !== null)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
