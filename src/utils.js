@@ -531,3 +531,8 @@ export const zip = (...arrays) =>
 
 export const pick = (obj, keys) =>
   Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
