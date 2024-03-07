@@ -798,3 +798,10 @@ export const timeout = (promise, ms) =>
   Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
 
 export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
+
+export const groupBy = (arr, key) =>
+  arr.reduce((acc, item) => {
+    const g = typeof key === 'function' ? key(item) : item[key];
+    (acc[g] = acc[g] || []).push(item);
+    return acc;
+  }, {});
