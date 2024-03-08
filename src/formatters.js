@@ -398,3 +398,6 @@ export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-
 
 export const truncate = (str, max, ellipsis = '…') =>
   str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
+
+export const toCamelCase = (str) =>
+  str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
