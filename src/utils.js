@@ -538,3 +538,6 @@ export const flatten = (arr, depth = 1) =>
     : arr.slice();
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
