@@ -805,3 +805,10 @@ export const groupBy = (arr, key) =>
     (acc[g] = acc[g] || []).push(item);
     return acc;
   }, {});
+
+export const paginate = (items, page, limit) => ({
+  data: items.slice((page - 1) * limit, page * limit),
+  total: items.length,
+  page,
+  pages: Math.ceil(items.length / limit),
+});
