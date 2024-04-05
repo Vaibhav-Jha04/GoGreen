@@ -561,3 +561,6 @@ export const debounce = (fn, wait) => {
 };
 
 export const uniq = (arr) => [...new Set(arr)];
+
+export const omit = (obj, keys) =>
+  Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
