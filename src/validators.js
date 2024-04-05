@@ -256,3 +256,5 @@ export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
