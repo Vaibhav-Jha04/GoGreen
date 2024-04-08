@@ -258,3 +258,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const isInteger = (v) => Number.isInteger(v);
