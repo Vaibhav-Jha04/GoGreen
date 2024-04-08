@@ -262,3 +262,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const isInteger = (v) => Number.isInteger(v);
 
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
+
+export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
