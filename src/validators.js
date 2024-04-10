@@ -264,3 +264,5 @@ export const isInteger = (v) => Number.isInteger(v);
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
