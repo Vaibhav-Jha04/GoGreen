@@ -266,3 +266,5 @@ export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
 
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
+
+export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
