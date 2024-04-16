@@ -578,3 +578,8 @@ export const chunk = (arr, size) => {
 
 export const zip = (...arrays) =>
   Array.from({ length: Math.min(...arrays.map(a => a.length)) }, (_, i) => arrays.map(a => a[i]));
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
