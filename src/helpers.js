@@ -867,3 +867,5 @@ export const retry = async (fn, retries = 3, delay = 500) => {
     return retry(fn, retries - 1, delay * 2);
   }
 };
+
+export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
