@@ -418,3 +418,10 @@ export const pluralize = (word, count, plural) =>
 
 export const truncate = (str, max, ellipsis = '…') =>
   str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
+
+export const bytesToHuman = (bytes) => {
+  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  let i = 0;
+  while (bytes >= 1024 && i < units.length - 1) { bytes /= 1024; i++; }
+  return `${bytes.toFixed(1)} ${units[i]}`;
+};
