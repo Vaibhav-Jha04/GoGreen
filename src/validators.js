@@ -282,3 +282,5 @@ export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 export const isOneOf = (v, options) => options.includes(v);
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
