@@ -604,3 +604,9 @@ export const uniq = (arr) => [...new Set(arr)];
 
 export const pick = (obj, keys) =>
   Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
+
+export const isEmpty = (val) =>
+  val === null || val === undefined ||
+  (typeof val === 'string' && val.trim() === '') ||
+  (Array.isArray(val) && val.length === 0) ||
+  (typeof val === 'object' && Object.keys(val).length === 0);
