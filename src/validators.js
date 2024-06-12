@@ -7,3 +7,5 @@ export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
+
+export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
