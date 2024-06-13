@@ -975,3 +975,6 @@ export const groupBy = (arr, key) =>
     (acc[g] = acc[g] || []).push(item);
     return acc;
   }, {});
+
+export const timeout = (promise, ms) =>
+  Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
