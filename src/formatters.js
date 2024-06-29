@@ -449,3 +449,6 @@ export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).to
 
 export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
   new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
+
+export const formatNumber = (n, decimals = 2) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
