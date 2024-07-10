@@ -1026,3 +1026,5 @@ export const groupBy = (arr, key) =>
     (acc[g] = acc[g] || []).push(item);
     return acc;
   }, {});
+
+export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
