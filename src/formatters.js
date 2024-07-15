@@ -458,3 +458,5 @@ export const formatNumber = (n, decimals = 2) =>
 
 export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
   new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
+
+export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
