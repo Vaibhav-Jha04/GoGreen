@@ -1068,3 +1068,10 @@ export const batchProcess = async (items, fn, batchSize = 10) => {
   }
   return results;
 };
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
