@@ -15,3 +15,6 @@ export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).to
 
 export const truncate = (str, max, ellipsis = '…') =>
   str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
+
+export const truncate = (str, max, ellipsis = '…') =>
+  str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
