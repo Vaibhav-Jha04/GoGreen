@@ -1473,3 +1473,14 @@ export const useDebounce = (value, delay) => {
   }, [value, delay]);
   return debounced;
 };
+
+import { useState, useEffect } from 'react';
+
+export const useLocalStorage = (key, initial) => {
+  const [value, setValue] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(key)) ?? initial; }
+    catch { return initial; }
+  });
+  useEffect(() => { localStorage.setItem(key, JSON.stringify(value)); }, [key, value]);
+  return [value, setValue];
+};
