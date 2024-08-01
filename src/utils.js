@@ -643,3 +643,5 @@ export const deepClone = (val) => {
 
 export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+
+export const toArray = (val) => (Array.isArray(val) ? val : [val]);
