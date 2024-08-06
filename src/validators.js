@@ -11,3 +11,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
 
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
+
+export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
