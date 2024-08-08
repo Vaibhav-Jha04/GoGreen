@@ -648,3 +648,8 @@ export const toArray = (val) => (Array.isArray(val) ? val : [val]);
 
 export const zip = (...arrays) =>
   Array.from({ length: Math.min(...arrays.map(a => a.length)) }, (_, i) => arrays.map(a => a[i]));
+
+export const debounce = (fn, wait) => {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+};
