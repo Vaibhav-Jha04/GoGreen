@@ -653,3 +653,9 @@ export const debounce = (fn, wait) => {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
 };
+
+export const isEmpty = (val) =>
+  val === null || val === undefined ||
+  (typeof val === 'string' && val.trim() === '') ||
+  (Array.isArray(val) && val.length === 0) ||
+  (typeof val === 'object' && Object.keys(val).length === 0);
