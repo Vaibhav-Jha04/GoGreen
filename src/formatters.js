@@ -477,3 +477,6 @@ export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
 
 export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
