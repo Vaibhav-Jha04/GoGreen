@@ -480,3 +480,6 @@ export const toCamelCase = (str) =>
 
 export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
+
+export const truncate = (str, max, ellipsis = '…') =>
+  str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
