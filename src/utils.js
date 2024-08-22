@@ -679,3 +679,5 @@ export const deepClone = (val) => {
   if (Array.isArray(val)) return val.map(deepClone);
   return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
 };
+
+export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
