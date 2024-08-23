@@ -503,3 +503,6 @@ export const bytesToHuman = (bytes) => {
 
 export const formatDate = (date, locale = 'en-US') =>
   new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
