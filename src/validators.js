@@ -338,3 +338,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
