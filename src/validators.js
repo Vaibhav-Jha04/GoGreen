@@ -336,3 +336,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+export const isOneOf = (v, options) => options.includes(v);
