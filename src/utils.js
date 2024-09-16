@@ -685,3 +685,5 @@ export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 export const noop = () => {};
 
 export const noop = () => {};
+
+export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
