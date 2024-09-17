@@ -1118,3 +1118,5 @@ export const once = (fn) => {
   let called = false, result;
   return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
 };
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
