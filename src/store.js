@@ -1147,3 +1147,8 @@ export const combineReducers = (reducers) => (state = {}, action) =>
   Object.fromEntries(
     Object.entries(reducers).map(([key, reducer]) => [key, reducer(state[key], action)])
   );
+
+export const combineReducers = (reducers) => (state = {}, action) =>
+  Object.fromEntries(
+    Object.entries(reducers).map(([key, reducer]) => [key, reducer(state[key], action)])
+  );
