@@ -517,3 +517,6 @@ export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
 
 export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
+
+export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
+  new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
