@@ -692,3 +692,8 @@ export const debounce = (fn, wait) => {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
 };
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
