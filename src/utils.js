@@ -54,3 +54,8 @@ export const omit = (obj, keys) =>
 
 export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
