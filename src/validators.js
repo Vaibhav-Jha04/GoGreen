@@ -357,3 +357,5 @@ export const isUrl = (v) => { try { new URL(v); return true; } catch { return fa
 export const isInteger = (v) => Number.isInteger(v);
 
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
+
+export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
