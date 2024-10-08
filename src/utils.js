@@ -726,3 +726,6 @@ export const flatten = (arr, depth = 1) =>
   depth > 0
     ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
     : arr.slice();
+
+export const omit = (obj, keys) =>
+  Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
