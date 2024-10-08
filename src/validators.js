@@ -373,3 +373,5 @@ export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
