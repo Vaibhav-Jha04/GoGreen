@@ -375,3 +375,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
+
+export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
