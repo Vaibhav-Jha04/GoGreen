@@ -731,3 +731,6 @@ export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export const zip = (...arrays) =>
+  Array.from({ length: Math.min(...arrays.map(a => a.length)) }, (_, i) => arrays.map(a => a[i]));
