@@ -729,3 +729,5 @@ export const flatten = (arr, depth = 1) =>
 
 export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
+
+export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
