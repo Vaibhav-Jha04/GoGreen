@@ -1183,3 +1183,8 @@ export const once = (fn) => {
   let called = false, result;
   return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
 };
+
+export const once = (fn) => {
+  let called = false, result;
+  return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
+};
