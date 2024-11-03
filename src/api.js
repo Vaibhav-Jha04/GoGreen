@@ -1089,3 +1089,11 @@ export const del = async (path, options = {}) => {
   if (!res.ok) throw new Error(`DELETE ${path} failed: ${res.status}`);
   return res.status === 204 ? null : res.json();
 };
+
+export const withAuth = (options = {}) => ({
+  ...options,
+  headers: {
+    ...options.headers,
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+});
