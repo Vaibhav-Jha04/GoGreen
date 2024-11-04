@@ -537,3 +537,6 @@ export const formatNumber = (n, decimals = 2) =>
   new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
 
 export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
