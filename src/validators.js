@@ -387,3 +387,5 @@ export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+export const isOneOf = (v, options) => options.includes(v);
