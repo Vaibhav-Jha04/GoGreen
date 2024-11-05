@@ -389,3 +389,5 @@ export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
