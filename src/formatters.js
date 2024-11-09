@@ -546,3 +546,5 @@ export const formatNumber = (n, decimals = 2) =>
 
 export const formatDate = (date, locale = 'en-US') =>
   new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
