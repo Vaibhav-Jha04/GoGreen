@@ -743,3 +743,9 @@ export const debounce = (fn, wait) => {
 };
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const deepClone = (val) => {
+  if (val === null || typeof val !== 'object') return val;
+  if (Array.isArray(val)) return val.map(deepClone);
+  return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
+};
