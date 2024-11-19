@@ -1261,3 +1261,9 @@ export const createSlice = (name, initialState, reducers) => {
   };
   return { actions, reducer };
 };
+
+export const applyMiddleware = (...middlewares) => (store) => {
+  let dispatch = store.dispatch;
+  middlewares.reverse().forEach(mw => { dispatch = mw(store)(dispatch); });
+  return { ...store, dispatch };
+};
