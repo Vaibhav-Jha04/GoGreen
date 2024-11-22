@@ -1214,3 +1214,5 @@ export const batchProcess = async (items, fn, batchSize = 10) => {
   }
   return results;
 };
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
