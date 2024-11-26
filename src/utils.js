@@ -754,3 +754,6 @@ export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
 
 export const identity = (x) => x;
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
