@@ -1218,3 +1218,8 @@ export const batchProcess = async (items, fn, batchSize = 10) => {
 export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
 
 export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
+
+export const once = (fn) => {
+  let called = false, result;
+  return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
+};
