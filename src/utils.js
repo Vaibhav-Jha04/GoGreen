@@ -780,3 +780,5 @@ export const isEmpty = (val) =>
   (typeof val === 'object' && Object.keys(val).length === 0);
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
