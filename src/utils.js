@@ -782,3 +782,5 @@ export const isEmpty = (val) =>
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const identity = (x) => x;
