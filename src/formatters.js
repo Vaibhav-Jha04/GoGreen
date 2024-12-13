@@ -550,3 +550,5 @@ export const formatDate = (date, locale = 'en-US') =>
 export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
 export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
