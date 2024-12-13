@@ -1250,3 +1250,12 @@ export const paginate = (items, page, limit) => ({
   page,
   pages: Math.ceil(items.length / limit),
 });
+
+export const batchProcess = async (items, fn, batchSize = 10) => {
+  const results = [];
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    results.push(...await Promise.all(batch.map(fn)));
+  }
+  return results;
+};
