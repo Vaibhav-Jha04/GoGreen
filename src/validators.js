@@ -405,3 +405,5 @@ export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
