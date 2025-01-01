@@ -409,3 +409,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
