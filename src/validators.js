@@ -19,3 +19,5 @@ export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
