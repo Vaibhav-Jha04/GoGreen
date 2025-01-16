@@ -800,3 +800,5 @@ export const zip = (...arrays) =>
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const toArray = (val) => (Array.isArray(val) ? val : [val]);
