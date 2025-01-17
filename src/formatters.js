@@ -570,3 +570,6 @@ export const formatDate = (date, locale = 'en-US') =>
 
 export const formatNumber = (n, decimals = 2) =>
   new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
+
+export const toCamelCase = (str) =>
+  str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
