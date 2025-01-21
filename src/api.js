@@ -1235,3 +1235,11 @@ export const withAuth = (options = {}) => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },
 });
+
+export const withAuth = (options = {}) => ({
+  ...options,
+  headers: {
+    ...options.headers,
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+});
