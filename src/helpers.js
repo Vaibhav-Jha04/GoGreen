@@ -1319,3 +1319,12 @@ export const once = (fn) => {
   let called = false, result;
   return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
 };
+
+export const batchProcess = async (items, fn, batchSize = 10) => {
+  const results = [];
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    results.push(...await Promise.all(batch.map(fn)));
+  }
+  return results;
+};
