@@ -429,3 +429,5 @@ export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
