@@ -1336,3 +1336,10 @@ export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
 
 export const timeout = (promise, ms) =>
   Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
+
+export const paginate = (items, page, limit) => ({
+  data: items.slice((page - 1) * limit, page * limit),
+  total: items.length,
+  page,
+  pages: Math.ceil(items.length / limit),
+});
