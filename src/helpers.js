@@ -1343,3 +1343,8 @@ export const paginate = (items, page, limit) => ({
   page,
   pages: Math.ceil(items.length / limit),
 });
+
+export const once = (fn) => {
+  let called = false, result;
+  return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
+};
