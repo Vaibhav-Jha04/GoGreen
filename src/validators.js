@@ -433,3 +433,5 @@ export const isPositive = (v) => typeof v === 'number' && v > 0;
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
