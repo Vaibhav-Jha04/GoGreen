@@ -1370,3 +1370,5 @@ export const groupBy = (arr, key) =>
     (acc[g] = acc[g] || []).push(item);
     return acc;
   }, {});
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
