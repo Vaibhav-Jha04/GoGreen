@@ -435,3 +435,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isOneOf = (v, options) => options.includes(v);
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
