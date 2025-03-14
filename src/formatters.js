@@ -634,3 +634,10 @@ export const formatDuration = (ms) => {
   const s = Math.floor(ms / 1000), m = Math.floor(s / 60), h = Math.floor(m / 60);
   return [h, m % 60, s % 60].map(v => String(v).padStart(2, '0')).join(':');
 };
+
+export const bytesToHuman = (bytes) => {
+  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  let i = 0;
+  while (bytes >= 1024 && i < units.length - 1) { bytes /= 1024; i++; }
+  return `${bytes.toFixed(1)} ${units[i]}`;
+};
