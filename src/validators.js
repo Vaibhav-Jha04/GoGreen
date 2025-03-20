@@ -445,3 +445,5 @@ export const isUrl = (v) => { try { new URL(v); return true; } catch { return fa
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
+
+export const isOneOf = (v, options) => options.includes(v);
