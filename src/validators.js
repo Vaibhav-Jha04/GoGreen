@@ -447,3 +447,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
