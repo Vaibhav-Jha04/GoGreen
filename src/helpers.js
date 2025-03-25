@@ -1414,3 +1414,10 @@ export const memoize = (fn) => {
     return result;
   };
 };
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
