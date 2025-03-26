@@ -1506,3 +1506,8 @@ export const createSlice = (name, initialState, reducers) => {
   };
   return { actions, reducer };
 };
+
+export const combineReducers = (reducers) => (state = {}, action) =>
+  Object.fromEntries(
+    Object.entries(reducers).map(([key, reducer]) => [key, reducer(state[key], action)])
+  );
