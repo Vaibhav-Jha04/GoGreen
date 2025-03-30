@@ -1517,3 +1517,9 @@ export const applyMiddleware = (...middlewares) => (store) => {
   middlewares.reverse().forEach(mw => { dispatch = mw(store)(dispatch); });
   return { ...store, dispatch };
 };
+
+export const applyMiddleware = (...middlewares) => (store) => {
+  let dispatch = store.dispatch;
+  middlewares.reverse().forEach(mw => { dispatch = mw(store)(dispatch); });
+  return { ...store, dispatch };
+};
