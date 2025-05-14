@@ -472,3 +472,5 @@ export const isInteger = (v) => Number.isInteger(v);
 export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
 
 export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
+
+export const isOneOf = (v, options) => options.includes(v);
