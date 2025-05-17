@@ -688,3 +688,6 @@ export const toCamelCase = (str) =>
 
 export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
+
+export const truncate = (str, max, ellipsis = '…') =>
+  str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
