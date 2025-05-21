@@ -1645,3 +1645,9 @@ const createStore = (reducer, initialState) => {
   };
 };
 export default createStore;
+
+export const applyMiddleware = (...middlewares) => (store) => {
+  let dispatch = store.dispatch;
+  middlewares.reverse().forEach(mw => { dispatch = mw(store)(dispatch); });
+  return { ...store, dispatch };
+};
