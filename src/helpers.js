@@ -1501,3 +1501,10 @@ export const memoize = (fn) => {
     return result;
   };
 };
+
+export const paginate = (items, page, limit) => ({
+  data: items.slice((page - 1) * limit, page * limit),
+  total: items.length,
+  page,
+  pages: Math.ceil(items.length / limit),
+});
