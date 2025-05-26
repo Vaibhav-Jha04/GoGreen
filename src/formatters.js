@@ -697,3 +697,6 @@ export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
 
 export const truncate = (str, max, ellipsis = '…') =>
   str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
+
+export const toTitleCase = (str) =>
+  str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
