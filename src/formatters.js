@@ -706,3 +706,6 @@ export const pluralize = (word, count, plural) =>
 
 export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
+
+export const toCamelCase = (str) =>
+  str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
