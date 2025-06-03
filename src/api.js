@@ -1417,3 +1417,13 @@ export const del = async (path, options = {}) => {
   if (!res.ok) throw new Error(`DELETE ${path} failed: ${res.status}`);
   return res.status === 204 ? null : res.json();
 };
+
+export const post = async (path, body, options = {}) => {
+  const res = await fetch(`${process.env.API_URL}${path}`, {
+    ...options, method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...options.headers },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`POST ${path} failed: ${res.status}`);
+  return res.json();
+};
