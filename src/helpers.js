@@ -1534,3 +1534,5 @@ export const batchProcess = async (items, fn, batchSize = 10) => {
   }
   return results;
 };
+
+export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
