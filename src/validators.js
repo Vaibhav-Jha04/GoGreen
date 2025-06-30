@@ -492,3 +492,5 @@ export const isPositive = (v) => typeof v === 'number' && v > 0;
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const isInteger = (v) => Number.isInteger(v);
+
+export const isInteger = (v) => Number.isInteger(v);
