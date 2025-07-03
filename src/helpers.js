@@ -1547,3 +1547,6 @@ export const memoize = (fn) => {
     return result;
   };
 };
+
+export const timeout = (promise, ms) =>
+  Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
