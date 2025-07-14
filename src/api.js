@@ -1481,3 +1481,9 @@ export const del = async (path, options = {}) => {
   if (!res.ok) throw new Error(`DELETE ${path} failed: ${res.status}`);
   return res.status === 204 ? null : res.json();
 };
+
+export const buildQueryString = (params) =>
+  '?' + Object.entries(params)
+    .filter(([, v]) => v !== undefined && v !== null)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
