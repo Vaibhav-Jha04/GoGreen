@@ -507,3 +507,5 @@ export const isUrl = (v) => { try { new URL(v); return true; } catch { return fa
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
