@@ -1557,3 +1557,10 @@ export const throttle = (fn, limit) => {
     if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
   };
 };
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
