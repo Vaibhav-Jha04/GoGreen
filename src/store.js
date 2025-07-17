@@ -1743,3 +1743,14 @@ const createStore = (reducer, initialState) => {
   };
 };
 export default createStore;
+
+const createStore = (reducer, initialState) => {
+  let state = initialState;
+  const listeners = [];
+  return {
+    getState: () => state,
+    dispatch: (action) => { state = reducer(state, action); listeners.forEach(l => l()); },
+    subscribe: (listener) => { listeners.push(listener); return () => listeners.splice(listeners.indexOf(listener), 1); },
+  };
+};
+export default createStore;
