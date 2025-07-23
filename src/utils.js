@@ -923,3 +923,9 @@ export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 export const identity = (x) => x;
 
 export const noop = () => {};
+
+export const isEmpty = (val) =>
+  val === null || val === undefined ||
+  (typeof val === 'string' && val.trim() === '') ||
+  (Array.isArray(val) && val.length === 0) ||
+  (typeof val === 'object' && Object.keys(val).length === 0);
