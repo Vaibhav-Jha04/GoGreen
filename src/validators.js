@@ -524,3 +524,5 @@ export const isUUID = (v) =>
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
