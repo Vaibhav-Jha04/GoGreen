@@ -1594,3 +1594,10 @@ export const paginate = (items, page, limit) => ({
   page,
   pages: Math.ceil(items.length / limit),
 });
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
