@@ -526,3 +526,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+export const isPositive = (v) => typeof v === 'number' && v > 0;
