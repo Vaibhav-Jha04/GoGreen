@@ -947,3 +947,5 @@ export const deepClone = (val) => {
   if (Array.isArray(val)) return val.map(deepClone);
   return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
 };
+
+export const toArray = (val) => (Array.isArray(val) ? val : [val]);
