@@ -1551,3 +1551,11 @@ export const buildQueryString = (params) =>
     .filter(([, v]) => v !== undefined && v !== null)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&');
+
+export const withAuth = (options = {}) => ({
+  ...options,
+  headers: {
+    ...options.headers,
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+});
