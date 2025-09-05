@@ -530,3 +530,5 @@ export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const isOneOf = (v, options) => options.includes(v);
+
+export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
