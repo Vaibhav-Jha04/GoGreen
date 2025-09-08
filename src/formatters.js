@@ -755,3 +755,6 @@ export const toTitleCase = (str) =>
 
 export const formatNumber = (n, decimals = 2) =>
   new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
+
+export const formatNumber = (n, decimals = 2) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
