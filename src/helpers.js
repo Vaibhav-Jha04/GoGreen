@@ -1611,3 +1611,6 @@ export const paginate = (items, page, limit) => ({
   page,
   pages: Math.ceil(items.length / limit),
 });
+
+export const timeout = (promise, ms) =>
+  Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
