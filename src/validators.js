@@ -534,3 +534,5 @@ export const isOneOf = (v, options) => options.includes(v);
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
