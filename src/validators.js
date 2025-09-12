@@ -536,3 +536,5 @@ export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
 
 export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
+
+export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
