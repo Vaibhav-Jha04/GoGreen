@@ -1581,3 +1581,9 @@ export const post = async (path, body, options = {}) => {
   if (!res.ok) throw new Error(`POST ${path} failed: ${res.status}`);
   return res.json();
 };
+
+export const buildQueryString = (params) =>
+  '?' + Object.entries(params)
+    .filter(([, v]) => v !== undefined && v !== null)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
