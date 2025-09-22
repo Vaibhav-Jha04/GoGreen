@@ -542,3 +542,5 @@ export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
 export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
 
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
