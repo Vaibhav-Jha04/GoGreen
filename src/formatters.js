@@ -773,3 +773,6 @@ export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
 
 export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
