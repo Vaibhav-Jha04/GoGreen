@@ -1647,3 +1647,10 @@ export const batchProcess = async (items, fn, batchSize = 10) => {
 };
 
 export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
+
+export const throttle = (fn, limit) => {
+  let inThrottle;
+  return (...args) => {
+    if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
+  };
+};
