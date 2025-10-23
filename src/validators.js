@@ -550,3 +550,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isOneOf = (v, options) => options.includes(v);
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
