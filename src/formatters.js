@@ -781,3 +781,6 @@ export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).to
 
 export const formatDate = (date, locale = 'en-US') =>
   new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
+
+export const formatNumber = (n, decimals = 2) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(n);
