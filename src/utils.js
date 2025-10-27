@@ -1004,3 +1004,6 @@ export const isEmpty = (val) =>
   (typeof val === 'string' && val.trim() === '') ||
   (Array.isArray(val) && val.length === 0) ||
   (typeof val === 'object' && Object.keys(val).length === 0);
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
