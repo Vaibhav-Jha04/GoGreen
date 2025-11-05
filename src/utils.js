@@ -1009,3 +1009,5 @@ export const pick = (obj, keys) =>
   Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
 
 export const noop = () => {};
+
+export const noop = () => {};
