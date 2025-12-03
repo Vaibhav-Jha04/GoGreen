@@ -1691,3 +1691,5 @@ export const throttle = (fn, limit) => {
     if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
   };
 };
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
