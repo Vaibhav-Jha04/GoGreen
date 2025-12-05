@@ -795,3 +795,6 @@ export const toCamelCase = (str) =>
 
 export const toTitleCase = (str) =>
   str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+
+export const toTitleCase = (str) =>
+  str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
