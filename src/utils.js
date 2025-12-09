@@ -1031,3 +1031,5 @@ export const debounce = (fn, wait) => {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
 };
+
+export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
