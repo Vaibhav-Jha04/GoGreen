@@ -806,3 +806,6 @@ export const toKebabCase = (str) => str.replace(/\s+/g, '-').replace(/[^a-zA-Z0-
 
 export const toTitleCase = (str) =>
   str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+
+export const formatDate = (date, locale = 'en-US') =>
+  new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
