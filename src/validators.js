@@ -580,3 +580,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
