@@ -1033,3 +1033,6 @@ export const debounce = (fn, wait) => {
 };
 
 export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
