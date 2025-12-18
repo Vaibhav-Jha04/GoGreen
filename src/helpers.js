@@ -162,3 +162,5 @@ export const paginate = (items, page, limit) => ({
   page,
   pages: Math.ceil(items.length / limit),
 });
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
