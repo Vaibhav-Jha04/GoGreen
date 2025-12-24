@@ -1712,3 +1712,14 @@ export const retry = async (fn, retries = 3, delay = 500) => {
     return retry(fn, retries - 1, delay * 2);
   }
 };
+
+export const memoize = (fn) => {
+  const cache = new Map();
+  return (...args) => {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) return cache.get(key);
+    const result = fn(...args);
+    cache.set(key, result);
+    return result;
+  };
+};
