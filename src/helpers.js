@@ -1728,3 +1728,10 @@ export const once = (fn) => {
   let called = false, result;
   return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
 };
+
+export const paginate = (items, page, limit) => ({
+  data: items.slice((page - 1) * limit, page * limit),
+  total: items.length,
+  page,
+  pages: Math.ceil(items.length / limit),
+});
