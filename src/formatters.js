@@ -823,3 +823,6 @@ export const formatDuration = (ms) => {
 
 export const truncate = (str, max, ellipsis = '…') =>
   str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
+
+export const formatDate = (date, locale = 'en-US') =>
+  new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
