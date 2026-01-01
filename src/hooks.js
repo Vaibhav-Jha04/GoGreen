@@ -2781,3 +2781,11 @@ export const useLocalStorage = (key, initial) => {
   useEffect(() => { localStorage.setItem(key, JSON.stringify(value)); }, [key, value]);
   return [value, setValue];
 };
+
+import { useState, useCallback } from 'react';
+
+export const useToggle = (initial = false) => {
+  const [state, setState] = useState(initial);
+  const toggle = useCallback(() => setState(s => !s), []);
+  return [state, toggle];
+};
