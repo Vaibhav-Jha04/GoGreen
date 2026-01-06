@@ -1069,3 +1069,8 @@ export const chunk = (arr, size) => {
 };
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export const flatten = (arr, depth = 1) =>
+  depth > 0
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
