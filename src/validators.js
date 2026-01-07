@@ -35,3 +35,5 @@ export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
