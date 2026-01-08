@@ -834,3 +834,5 @@ export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
 
 export const toTitleCase = (str) =>
   str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+
+export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
