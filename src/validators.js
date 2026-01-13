@@ -594,3 +594,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.test(v);
+
+export const isUrl = (v) => { try { new URL(v); return true; } catch { return false; } };
