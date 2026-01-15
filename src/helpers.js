@@ -1749,3 +1749,12 @@ export const retry = async (fn, retries = 3, delay = 500) => {
 export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
 
 export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
+
+export const batchProcess = async (items, fn, batchSize = 10) => {
+  const results = [];
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    results.push(...await Promise.all(batch.map(fn)));
+  }
+  return results;
+};
