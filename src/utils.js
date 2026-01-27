@@ -1086,3 +1086,5 @@ export const deepClone = (val) => {
 
 export const pick = (obj, keys) =>
   Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
+
+export const toArray = (val) => (Array.isArray(val) ? val : [val]);
