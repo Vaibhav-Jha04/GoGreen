@@ -186,3 +186,5 @@ export const memoize = (fn) => {
     return result;
   };
 };
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
