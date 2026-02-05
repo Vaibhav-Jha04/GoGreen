@@ -1765,3 +1765,5 @@ export const throttle = (fn, limit) => {
     if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => (inThrottle = false), limit); }
   };
 };
+
+export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
