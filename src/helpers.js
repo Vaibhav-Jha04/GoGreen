@@ -1767,3 +1767,8 @@ export const throttle = (fn, limit) => {
 };
 
 export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
+
+export const once = (fn) => {
+  let called = false, result;
+  return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
+};
