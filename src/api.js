@@ -1825,3 +1825,11 @@ export const get = async (path, options = {}) => {
   if (!res.ok) throw new Error(`GET ${path} failed: ${res.status}`);
   return res.json();
 };
+
+export const withAuth = (options = {}) => ({
+  ...options,
+  headers: {
+    ...options.headers,
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+});
