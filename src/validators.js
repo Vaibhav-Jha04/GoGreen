@@ -603,3 +603,5 @@ export const isUUID = (v) =>
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(v);
 
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
+
+export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
