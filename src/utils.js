@@ -1120,3 +1120,5 @@ export const zip = (...arrays) =>
   Array.from({ length: Math.min(...arrays.map(a => a.length)) }, (_, i) => arrays.map(a => a[i]));
 
 export const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+
+export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
