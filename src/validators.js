@@ -605,3 +605,5 @@ export const isUUID = (v) =>
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
 
 export const inRange = (v, min, max) => typeof v === 'number' && v >= min && v <= max;
+
+export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
