@@ -882,3 +882,6 @@ export const formatNumber = (n, decimals = 2) =>
 
 export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
   new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
+
+export const toTitleCase = (str) =>
+  str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
