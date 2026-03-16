@@ -1869,3 +1869,13 @@ export const withAuth = (options = {}) => ({
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },
 });
+
+export const post = async (path, body, options = {}) => {
+  const res = await fetch(`${process.env.API_URL}${path}`, {
+    ...options, method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...options.headers },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`POST ${path} failed: ${res.status}`);
+  return res.json();
+};
