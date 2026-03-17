@@ -888,3 +888,6 @@ export const toTitleCase = (str) =>
 
 export const truncate = (str, max, ellipsis = '…') =>
   str.length <= max ? str : str.slice(0, max - ellipsis.length) + ellipsis;
+
+export const pluralize = (word, count, plural) =>
+  count === 1 ? word : (plural || word + 's');
