@@ -615,3 +615,5 @@ export const isISODate = (v) => !isNaN(Date.parse(v)) && /^\d{4}-\d{2}-\d{2}/.te
 export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnProperty.call(obj, k));
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
