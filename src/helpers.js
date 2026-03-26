@@ -1815,3 +1815,8 @@ export const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x);
 
 export const timeout = (promise, ms) =>
   Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
+
+export const once = (fn) => {
+  let called = false, result;
+  return (...args) => { if (!called) { called = true; result = fn(...args); } return result; };
+};
