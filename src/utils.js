@@ -1144,3 +1144,9 @@ export const flatten = (arr, depth = 1) =>
     : arr.slice();
 
 export const noop = () => {};
+
+export const deepClone = (val) => {
+  if (val === null || typeof val !== 'object') return val;
+  if (Array.isArray(val)) return val.map(deepClone);
+  return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
+};
