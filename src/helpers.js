@@ -1849,3 +1849,6 @@ export const batchProcess = async (items, fn, batchSize = 10) => {
   }
   return results;
 };
+
+export const timeout = (promise, ms) =>
+  Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
