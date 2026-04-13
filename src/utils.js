@@ -1163,3 +1163,9 @@ export const omit = (obj, keys) =>
   Object.fromEntries(Object.entries(obj).filter(([k]) => !keys.includes(k)));
 
 export const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+export const isEmpty = (val) =>
+  val === null || val === undefined ||
+  (typeof val === 'string' && val.trim() === '') ||
+  (Array.isArray(val) && val.length === 0) ||
+  (typeof val === 'object' && Object.keys(val).length === 0);
