@@ -617,3 +617,5 @@ export const hasKeys = (obj, keys) => keys.every(k => Object.prototype.hasOwnPro
 export const isPositive = (v) => typeof v === 'number' && v > 0;
 
 export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
+
+export const isNonEmpty = (v) => v !== null && v !== undefined && String(v).trim().length > 0;
