@@ -908,3 +908,8 @@ export const formatDate = (date, locale = 'en-US') =>
 
 export const toCamelCase = (str) =>
   str.replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''));
+
+export const formatDuration = (ms) => {
+  const s = Math.floor(ms / 1000), m = Math.floor(s / 60), h = Math.floor(m / 60);
+  return [h, m % 60, s % 60].map(v => String(v).padStart(2, '0')).join(':');
+};
