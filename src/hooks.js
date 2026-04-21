@@ -3015,3 +3015,14 @@ export const useToggle = (initial = false) => {
   const toggle = useCallback(() => setState(s => !s), []);
   return [state, toggle];
 };
+
+import { useState, useEffect } from 'react';
+
+export const useLocalStorage = (key, initial) => {
+  const [value, setValue] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(key)) ?? initial; }
+    catch { return initial; }
+  });
+  useEffect(() => { localStorage.setItem(key, JSON.stringify(value)); }, [key, value]);
+  return [value, setValue];
+};
