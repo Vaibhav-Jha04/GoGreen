@@ -1179,3 +1179,6 @@ export const debounce = (fn, wait) => {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
 };
+
+export const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => k in obj).map(k => [k, obj[k]]));
