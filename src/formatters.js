@@ -919,3 +919,6 @@ export const formatNumber = (n, decimals = 2) =>
 
 export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
+
+export const toTitleCase = (str) =>
+  str.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
