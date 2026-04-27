@@ -627,3 +627,5 @@ export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 export const isAlphanumeric = (v) => /^[a-zA-Z0-9]+$/.test(v);
 
 export const isPositive = (v) => typeof v === 'number' && v > 0;
+
+export const isOneOf = (v, options) => options.includes(v);
