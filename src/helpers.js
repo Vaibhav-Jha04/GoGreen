@@ -1909,3 +1909,5 @@ export const groupBy = (arr, key) =>
 
 export const timeout = (promise, ms) =>
   Promise.race([promise, new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), ms))]);
+
+export const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
