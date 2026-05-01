@@ -1191,3 +1191,5 @@ export const debounce = (fn, wait) => {
 };
 
 export const noop = () => {};
+
+export const uniq = (arr) => [...new Set(arr)];
