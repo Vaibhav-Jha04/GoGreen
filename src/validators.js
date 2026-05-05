@@ -633,3 +633,5 @@ export const isOneOf = (v, options) => options.includes(v);
 export const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
 export const matchesPattern = (v, pattern) => new RegExp(pattern).test(v);
+
+export const maxLength = (v, n) => typeof v === 'string' && v.length <= n;
