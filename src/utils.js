@@ -1195,3 +1195,9 @@ export const noop = () => {};
 export const uniq = (arr) => [...new Set(arr)];
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export const deepClone = (val) => {
+  if (val === null || typeof val !== 'object') return val;
+  if (Array.isArray(val)) return val.map(deepClone);
+  return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, deepClone(v)]));
+};
