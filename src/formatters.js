@@ -939,3 +939,6 @@ export const pluralize = (word, count, plural) =>
 
 export const pluralize = (word, count, plural) =>
   count === 1 ? word : (plural || word + 's');
+
+export const formatCurrency = (amount, currency = 'USD', locale = 'en-US') =>
+  new Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount);
